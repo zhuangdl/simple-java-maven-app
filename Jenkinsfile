@@ -13,7 +13,8 @@ pipeline {
     }
     stage('build') {
       steps {
-        sh '/usr/local/apache-maven-3.6.0/bin/mvn clean install -DskipTests'
+        mvn_home=tool "mvn"
+        sh '${mvn_home}/bin/mvn clean install -DskipTests'
       }
     }
   }
